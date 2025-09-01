@@ -3,12 +3,13 @@ import { useState } from "react";
 import Image from 'next/image';
 import { assets } from "@/assets/assets";
 import Sidebar from "@/components/Sidebar";
+import PromptBox from "@/components/PromptBox";
 
 export default function Home() {
 
   const [expand, setExpand] = useState(false);
   const [messages, setmessages] = useState([]);
-  const [loading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
 
 
   return (
@@ -34,7 +35,7 @@ export default function Home() {
         ) : (<div></div>)
         }
 
-        {/* propmt-box  */}
+        <PromptBox isLoading={isLoading} setIsLoading={setIsLoading} />
 
         <p className="text-xs absolute bottom-1 text-gray-500">AI generated response, for reference purpose only.</p>
       </div>
