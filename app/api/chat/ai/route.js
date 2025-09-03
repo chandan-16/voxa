@@ -1,8 +1,10 @@
+export const maxDuration = 60;
 import connectDB from "@/config/db";
 import Chat from "@/models/Chat";
 import { getAuth } from "@clerk/nextjs/dist/server";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+
 
 // Initialize OpenAI client with deepseek API key and base URL 
 
@@ -12,6 +14,7 @@ const openai = new OpenAI({
 });
 
 export async function POST(req){
+
     try{
         const {userId} = getAuth(req)
 

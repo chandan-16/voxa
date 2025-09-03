@@ -21,6 +21,8 @@ export async function POST(req){
 
     // Prepare the user data to be saved in the database 
 
+console.log("Api is hit")
+
     const userData = {
         _id: data.id,
         email: data.email_addresses[0].email_address,
